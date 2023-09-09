@@ -20,6 +20,14 @@ function divide(x, y) {
     return x / y;
 }
 
+function modulus(x, y) {
+    return x % y;
+}
+
+function sqrt(x) {
+    return Math.sqrt(x);
+}
+
 // Operate initialization logic
 function operate(firstNumber, operator, secondNumber) {
     if (operator == "+") {
@@ -30,6 +38,10 @@ function operate(firstNumber, operator, secondNumber) {
         return multiply(firstNumber, secondNumber);
     } else if (operator == "/") {
         return divide(firstNumber, secondNumber);
+    } else if (operator == "%") {
+        return modulus(firstNumber, secondNumber);
+    } else if (operator == "√") {
+        return sqrt(firstNumber);
     } else {
         alert("Error, something went wrong while calculating!")
     }
