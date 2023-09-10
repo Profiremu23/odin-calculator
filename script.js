@@ -1,7 +1,7 @@
 // Initializing variables for calculator display
-let firstNumber = 3;
-let operator = "+";
-let secondNumber = 9;
+let firstNumber = 0;
+let operator = "";
+let secondNumber = 0;
 
 // Functions for various operators
 function add(x, y) {
