@@ -1,6 +1,6 @@
 #calculator-base {
-    background-color: ￼gray;
-    border: 2px solid ￼black;
+    background-color: gray;
+    border: 2px solid black;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -9,7 +9,7 @@
 }
 
 #top-display {
-    background-color: ￼#51b451;
+    background-color: #51b451;
     width: 256px;
     height: 64px;
     margin: auto;
