@@ -1,0 +1,25 @@
+#calculator-base {
+    background-color: ￼gray;
+    border: 2px solid ￼black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 320px;
+    height: 384px;
+}
+
+#top-display {
+    background-color: ￼#51b451;
+    width: 256px;
+    height: 64px;
+    margin: auto;
+}
+
+#button-display {
+    margin: auto;
+}
+
+button {
+    width: 76px;
+    height: 52px;
+}
