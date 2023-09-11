@@ -42,3 +42,20 @@ button {
     background-color: #d52828;
     color: white;
 }
+
+#operator-button {
+    background-color: #2262d6;
+    color: white;
+}
+
+button:hover {
+    background-color: #d1dfec;
+}
+
+#clear-button:hover {
+    background-color: #f02e2e;
+}
+
+#operator-button:hover {
+    background-color: #4280ef;
+}
