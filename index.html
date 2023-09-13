@@ -9,31 +9,31 @@
     <body>
         <div id="calculator-base">
             <div id="top-display">
-                <div id="first-display">5</div>
-                <div id="operator-display">+</div>
-                <div id="second-display">4</div>
+                <div id="first-display"></div>
+                <div id="operator-display"></div>
+                <div id="second-display"></div>
             </div>
             <div id="button-display">
-                <button id="clear-button">AC</button>
+                <button id="clear-button" onclick="clearAll()">AC</button>
                 <button id="clear-button">C</button>
                 <button id="operator-button">%</button>
                 <button id="operator-button">√</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
+                <button onclick="numberSeven()">7</button>
+                <button onclick="numberEight()">8</button>
+                <button onclick="numberNine()">9</button>
                 <button id="operator-button">/</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
+                <button onclick="numberFour()">4</button>
+                <button onclick="numberFive()">5</button>
+                <button onclick="numberSix()">6</button>
                 <button id="operator-button">*</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
+                <button onclick="numberOne()">1</button>
+                <button onclick="numberTwo()">2</button>
+                <button onclick="numberThree()">3</button>
                 <button id="operator-button">-</button>
-                <button>0</button>
-                <button>.</button>
+                <button onclick="numberZero()">0</button>
+                <button onclick="decimal()">,</button>
                 <button id="operator-button" onclick="operate()">=</button>
-                <button id="operator-button">+</button>
+                <button id="operator-button" onclick="buttonAdd()">+</button>
             </div>
         </div>
     </body>
