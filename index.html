@@ -15,24 +15,24 @@
             </div>
             <div id="button-display">
                 <button id="clear-button" onclick="clearAll()">AC</button>
-                <button id="clear-button">C</button>
-                <button id="operator-button">%</button>
-                <button id="operator-button">√</button>
+                <button id="clear-button" onclick="clear()">C</button>
+                <button id="operator-button" onclick="buttonModulus()">%</button>
+                <button id="operator-button" onclick="buttonSqrt()">√</button>
                 <button onclick="numberSeven()">7</button>
                 <button onclick="numberEight()">8</button>
                 <button onclick="numberNine()">9</button>
-                <button id="operator-button">/</button>
+                <button id="operator-button" onclick="buttonDivide()">/</button>
                 <button onclick="numberFour()">4</button>
                 <button onclick="numberFive()">5</button>
                 <button onclick="numberSix()">6</button>
-                <button id="operator-button">*</button>
+                <button id="operator-button" onclick="buttonMultiply()">*</button>
                 <button onclick="numberOne()">1</button>
                 <button onclick="numberTwo()">2</button>
                 <button onclick="numberThree()">3</button>
-                <button id="operator-button">-</button>
+                <button id="operator-button" onclick="buttonSubtract()">-</button>
                 <button onclick="numberZero()">0</button>
                 <button onclick="decimal()">,</button>
-                <button id="operator-button" onclick="operate()">=</button>
+                <button id="operator-button" onclick="operate(firstOperand, currentOperator, secondOperand)">=</button>
                 <button id="operator-button" onclick="buttonAdd()">+</button>
             </div>
         </div>

@@ -11,13 +11,23 @@ document.getElementById("second-display").textContent = secondOperand;
 
 // Functions for the number buttons
 function numberZero() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "0";
+    if (currentOperator.length = 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "0";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "0";
+    }
 }
 
 function numberOne() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "1";
+    if (currentOperator.length = 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "1";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "1";
+    }
 }
 
 function numberTwo() {
@@ -72,6 +82,36 @@ function buttonAdd() {
     operator.textContent = currentOperator += "+";
 }
 
+function buttonSubtract() {
+    currentOperator = "";
+    const operator = document.getElementById("operator-display");
+    operator.textContent = currentOperator += "-";
+}
+
+function buttonMultiply() {
+    currentOperator = "";
+    const operator = document.getElementById("operator-display");
+    operator.textContent = currentOperator += "*";
+}
+
+function buttonDivide() {
+    currentOperator = "";
+    const operator = document.getElementById("operator-display");
+    operator.textContent = currentOperator += "/";
+}
+
+function buttonModulus() {
+    currentOperator = "";
+    const operator = document.getElementById("operator-display");
+    operator.textContent = currentOperator += "%";
+}
+
+function buttonSqrt() {
+    currentOperator = "";
+    const operator = document.getElementById("operator-display");
+    operator.textContent = currentOperator += "√";
+}
+
 // Clear function
 function clearAll() {
     firstOperand = "";
@@ -108,20 +148,37 @@ function sqrt(x) {
     return Math.sqrt(x);
 }
 
+// Returning the result to the display
+function displayResult() {
+    document.getElementById("first-display").textContent = firstOperand + currentOperator + secondOperand;
+    document.getElementById("second-display").textContent = result;
+    firstOperand = result;
+    currentOperator = "";
+    document.getElementById("operator-display").textContent = currentOperator;
+    secondOperand = "";
+    result = "";
+}
+
 // Operate initialization logic
 function operate(firstOperand, currentOperator, secondOperand) {
     if (currentOperator == "+") {
-        return result = add(firstOperand, secondOperand);
+        result = add(firstOperand, secondOperand);
+        displayResult();
     } else if (currentOperator == "-") {
-        return result = subtract(firstOperand, secondOperand);
+        result = subtract(firstOperand, secondOperand);
+        displayResult();
     } else if (currentOperator == "*") {
-        return result = multiply(firstOperand, secondOperand);
+        result = multiply(firstOperand, secondOperand);
+        displayResult();
     } else if (currentOperator == "/") {
-        return result = divide(firstOperand, secondOperand);
+        result = divide(firstOperand, secondOperand);
+        displayResult();
     } else if (currentOperator == "%") {
-        return result = modulus(firstOperand, secondOperand);
+        result = modulus(firstOperand, secondOperand);
+        displayResult();
     } else if (currentOperator == "√") {
-        return result = sqrt(firstOperand);
+        result = sqrt(firstOperand);
+        displayResult();
     } else {
         alert("Error, something went wrong while calculating!")
     }
