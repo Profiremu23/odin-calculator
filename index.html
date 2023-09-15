@@ -8,6 +8,7 @@
     </head>
     <body>
         <div id="calculator-base">
+            <div id="title">Pro-Calculator</div>
             <div id="top-display">
                 <div id="first-display"></div>
                 <div id="operator-display"></div>
@@ -15,7 +16,7 @@
             </div>
             <div id="button-display">
                 <button id="clear-button" onclick="clearAll()">AC</button>
-                <button id="clear-button" onclick="clear()">C</button>
+                <button id="clear-button" onclick="backspace()">C</button>
                 <button id="operator-button" onclick="buttonModulus()">%</button>
                 <button id="operator-button" onclick="buttonSqrt()">√</button>
                 <button onclick="numberSeven()">7</button>
@@ -31,10 +32,11 @@
                 <button onclick="numberThree()">3</button>
                 <button id="operator-button" onclick="buttonSubtract()">-</button>
                 <button onclick="numberZero()">0</button>
-                <button onclick="decimal()">,</button>
+                <button onclick="decimal()">.</button>
                 <button id="operator-button" onclick="operate(firstOperand, currentOperator, secondOperand)">=</button>
                 <button id="operator-button" onclick="buttonAdd()">+</button>
             </div>
+            <div id="credits">Gyártási hely: Magyarország <a href="https://github.com/Profiremu23">Profiremu23</a> által || Made in Hungary by <a href="https://github.com/Profiremu23">Profiremu23</a></div>
         </div>
     </body>
 </html>

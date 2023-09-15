@@ -3,6 +3,15 @@
     font-family: Xenara;
 }
 
+a {
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
 #calculator-base {
     background-color: #8693AB;
     border: 1px solid black;
@@ -59,4 +68,10 @@ button:hover {
 
 #operator-button:hover {
     background-color: #4280ef;
+}
+
+#credits, a {
+    font-size: 16px;
+    color: snow;
+    margin-bottom: 8px;
 }

@@ -113,10 +113,10 @@ function numberNine() {
 function decimal() {
     if (currentOperator.length === 1) {
         const number = document.getElementById("second-display");
-        number.textContent = secondOperand += ",";
+        number.textContent = secondOperand += ".";
     } else {
         const number = document.getElementById("first-display");
-        number.textContent = firstOperand += ",";
+        number.textContent = firstOperand += ".";
     }
 }
 
@@ -168,9 +168,27 @@ function clearAll() {
     document.getElementById("second-display").textContent = secondOperand;
 }
 
+function backspace() {
+    if (currentOperator.length === 1) {
+        const string = secondOperand;
+        secondOperand = string.slice(0, secondOperand.length - 1);
+        document.getElementById("second-display").textContent = secondOperand;
+        if (secondOperand.length === 0) {
+            document.getElementById("second-display").textContent = 0;
+        }
+    } else {
+        const string = firstOperand;
+        firstOperand = string.slice(0, firstOperand.length - 1);
+        document.getElementById("first-display").textContent = firstOperand;
+        if (firstOperand.length === 0) {
+            document.getElementById("first-display").textContent = 0;
+        }
+    }
+}
+
 // Functions for various operators
 function add(x, y) {
-    return x + y;
+    return Number(x) + Number(y); // To get around slapping strings together in JavaScript
 }
 
 function subtract(x, y) {
@@ -195,12 +213,12 @@ function sqrt(x) {
 
 // Returning the result to the display
 function displayResult() {
-    document.getElementById("first-display").textContent = firstOperand + currentOperator + secondOperand;
-    document.getElementById("second-display").textContent = result;
+    secondOperand = "";
+    document.getElementById("second-display").textContent = secondOperand;
+    document.getElementById("first-display").textContent = result;
     firstOperand = result;
     currentOperator = "";
     document.getElementById("operator-display").textContent = currentOperator;
-    secondOperand = "";
     result = "";
 }
 
@@ -216,7 +234,11 @@ function operate(firstOperand, currentOperator, secondOperand) {
         result = multiply(firstOperand, secondOperand);
         displayResult();
     } else if (currentOperator == "/") {
-        result = divide(firstOperand, secondOperand);
+        if (secondOperand === "0") {
+            result = "Google en passant"
+        } else {
+            result = divide(firstOperand, secondOperand);
+        }
         displayResult();
     } else if (currentOperator == "%") {
         result = modulus(firstOperand, secondOperand);
