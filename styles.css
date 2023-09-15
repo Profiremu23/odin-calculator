@@ -1,5 +1,5 @@
 * {
-    font-size: 20px;
+    font-size: 40px;
     font-family: Xenara;
 }
 
@@ -9,8 +9,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 320px;
-    height: 384px;
+    width: 640px;
+    height: 768px;
 }
 
 #top-display {
@@ -20,23 +20,23 @@
     flex-direction: column;
     justify-content: end;
     align-items: end;
-    width: 256px;
-    height: 68px;
+    min-width: 512px;
+    min-height: 136px;
     margin: auto;
-    padding: 2px;
+    padding: 4px;
 }
 
 #button-display {
     margin: auto;
-    padding: 9px;
+    padding: 18px;
 }
 
 button {
     border: 1px solid #212227;
     background-color: #BDD4E7;
-    width: 76px;
-    height: 50px;
-    margin: 0px -6px -1px 0px;
+    width: 152px;
+    height: 100px;
+    margin: 0px -12px -2px 0px;
 }
 
 #clear-button {

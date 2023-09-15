@@ -11,7 +11,7 @@ document.getElementById("second-display").textContent = secondOperand;
 
 // Functions for the number buttons
 function numberZero() {
-    if (currentOperator.length = 1) {
+    if (currentOperator.length === 1) {
         const number = document.getElementById("second-display");
         number.textContent = secondOperand += "0";
     } else {
@@ -21,7 +21,7 @@ function numberZero() {
 }
 
 function numberOne() {
-    if (currentOperator.length = 1) {
+    if (currentOperator.length === 1) {
         const number = document.getElementById("second-display");
         number.textContent = secondOperand += "1";
     } else {
@@ -31,48 +31,93 @@ function numberOne() {
 }
 
 function numberTwo() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "2";
+    if (currentOperator.length === 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "2";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "2";
+    }
 }
 
 function numberThree() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "3";
+    if (currentOperator.length === 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "3";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "3";
+    }
 }
 
 function numberFour() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "4";
+    if (currentOperator.length === 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "4";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "4";
+    }
 }
 
 function numberFive() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "5";
+    if (currentOperator.length === 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "5";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "5";
+    }
 }
 
 function numberSix() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "6";
+    if (currentOperator.length === 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "6";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "6";
+    }
 }
 
 function numberSeven() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "7";
+    if (currentOperator.length === 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "7";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "7";
+    }
 }
 
 function numberEight() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "8";
+    if (currentOperator.length === 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "8";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "8";
+    }
 }
 
 function numberNine() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += "9";
+    if (currentOperator.length === 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += "9";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += "9";
+    }
 }
 
 function decimal() {
-    const number = document.getElementById("first-display");
-    number.textContent = firstOperand += ",";
+    if (currentOperator.length === 1) {
+        const number = document.getElementById("second-display");
+        number.textContent = secondOperand += ",";
+    } else {
+        const number = document.getElementById("first-display");
+        number.textContent = firstOperand += ",";
+    }
 }
 
 //Functions for the operator buttons
