@@ -7,11 +7,17 @@ Special thanks to the Odin Project community of for all of the help, tips and tr
 
 ## Features of Pro-Calculator 
 ✔️ Can do basic arithmetic operations (addition, subtraction, multiplication and division)
+
 ✔️ Can perform modulus
+
 ✔️ Can find the square root for a number
+
 ✔️ Automatic scientific notation display for numbers greater than 1 quintillion (10^18)
+
 ✔️ Backspace button for our lonely clear all button
+
 ✔️ Only one allowed decimal dot for your numbers
+
 ✔️ Chain operating
 
 ### Link to the Live Website
