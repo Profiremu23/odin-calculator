@@ -9,6 +9,17 @@ document.getElementById("first-display").textContent = 0;
 document.getElementById("operator-display").textContent = currentOperator;
 document.getElementById("second-display").textContent = secondOperand;
 
+// Avoiding digit display overflow
+function convertToScientificNotation() { // To automatically convert any number greater than one quintillion
+    if (secondOperand.length >= 19 && !secondOperand.includes('.')) {
+        const sciNot = document.getElementById("second-display");
+        sciNot.textContent = Number(secondOperand).toExponential();
+    } else if (firstOperand.length >= 19 && !secondOperand.includes('.')) {
+        const sciNot = document.getElementById("first-display");
+        sciNot.textContent = Number(firstOperand).toExponential();
+    }
+}
+
 // Functions for the number buttons
 function numberZero() {
     if (currentOperator.length === 1) {
@@ -18,6 +29,7 @@ function numberZero() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "0";
     }
+    convertToScientificNotation();
 }
 
 function numberOne() {
@@ -28,6 +40,7 @@ function numberOne() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "1";
     }
+    convertToScientificNotation();
 }
 
 function numberTwo() {
@@ -38,6 +51,7 @@ function numberTwo() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "2";
     }
+    convertToScientificNotation();
 }
 
 function numberThree() {
@@ -48,6 +62,7 @@ function numberThree() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "3";
     }
+    convertToScientificNotation();
 }
 
 function numberFour() {
@@ -58,6 +73,7 @@ function numberFour() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "4";
     }
+    convertToScientificNotation();
 }
 
 function numberFive() {
@@ -68,6 +84,7 @@ function numberFive() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "5";
     }
+    convertToScientificNotation();
 }
 
 function numberSix() {
@@ -78,6 +95,7 @@ function numberSix() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "6";
     }
+    convertToScientificNotation();
 }
 
 function numberSeven() {
@@ -88,6 +106,7 @@ function numberSeven() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "7";
     }
+    convertToScientificNotation();
 }
 
 function numberEight() {
@@ -98,6 +117,7 @@ function numberEight() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "8";
     }
+    convertToScientificNotation();
 }
 
 function numberNine() {
@@ -108,13 +128,14 @@ function numberNine() {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += "9";
     }
+    convertToScientificNotation();
 }
 
 function decimal() {
-    if (currentOperator.length === 1) {
+    if (currentOperator.length === 1 && !secondOperand.includes('.')) {
         const number = document.getElementById("second-display");
         number.textContent = secondOperand += ".";
-    } else {
+    } else if (currentOperator.length === 0 && !firstOperand.includes('.')) {
         const number = document.getElementById("first-display");
         number.textContent = firstOperand += ".";
     }
@@ -122,39 +143,71 @@ function decimal() {
 
 //Functions for the operator buttons
 function buttonAdd() {
-    currentOperator = "";
-    const operator = document.getElementById("operator-display");
-    operator.textContent = currentOperator += "+";
+    if (currentOperator.length === 1) {
+        operate(firstOperand, currentOperator, secondOperand);
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "+";
+    } else {
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "+";
+    }
 }
 
 function buttonSubtract() {
-    currentOperator = "";
-    const operator = document.getElementById("operator-display");
-    operator.textContent = currentOperator += "-";
+    if (currentOperator.length === 1) {
+        operate(firstOperand, currentOperator, secondOperand);
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "-";
+    }
+    else {
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "-";
+    }
 }
 
 function buttonMultiply() {
-    currentOperator = "";
-    const operator = document.getElementById("operator-display");
-    operator.textContent = currentOperator += "*";
+    if (currentOperator.length === 1) {
+        operate(firstOperand, currentOperator, secondOperand);
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "*";
+    }
+    else {
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "*";
+    }
 }
 
 function buttonDivide() {
-    currentOperator = "";
-    const operator = document.getElementById("operator-display");
-    operator.textContent = currentOperator += "/";
+    if (currentOperator.length === 1) {
+        operate(firstOperand, currentOperator, secondOperand);
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "/";
+    } else {
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "/";
+    }
 }
 
 function buttonModulus() {
-    currentOperator = "";
-    const operator = document.getElementById("operator-display");
-    operator.textContent = currentOperator += "%";
+    if (currentOperator.length === 1) {
+        operate(firstOperand, currentOperator, secondOperand);
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "%";
+    } else {
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "%";
+    }
 }
 
 function buttonSqrt() {
-    currentOperator = "";
-    const operator = document.getElementById("operator-display");
-    operator.textContent = currentOperator += "√";
+    if (currentOperator.length === 1) {
+        operate(firstOperand, currentOperator, secondOperand);
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "√";
+    } else {
+        const operator = document.getElementById("operator-display");
+        operator.textContent = currentOperator += "√";
+    }
 }
 
 // Clear function
@@ -184,11 +237,12 @@ function backspace() {
             document.getElementById("first-display").textContent = 0;
         }
     }
+    convertToScientificNotation();
 }
 
 // Functions for various operators
 function add(x, y) {
-    return Number(x) + Number(y); // To get around slapping strings together in JavaScript
+    return Number(x) + Number(y); // To get around slapping numbers to each other while being strings in JavaScript
 }
 
 function subtract(x, y) {
@@ -234,14 +288,18 @@ function operate(firstOperand, currentOperator, secondOperand) {
         result = multiply(firstOperand, secondOperand);
         displayResult();
     } else if (currentOperator == "/") {
-        if (secondOperand === "0") {
+        if (firstOperand === "0" || secondOperand === "0") {
             result = "Google en passant"
         } else {
             result = divide(firstOperand, secondOperand);
         }
         displayResult();
     } else if (currentOperator == "%") {
-        result = modulus(firstOperand, secondOperand);
+        if (firstOperand === "0" || secondOperand === "0") {
+            result = "Are you really trying?"
+        } else {
+            result = modulus(firstOperand, secondOperand);
+        }
         displayResult();
     } else if (currentOperator == "√") {
         result = sqrt(firstOperand);
